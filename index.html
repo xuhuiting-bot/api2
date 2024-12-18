@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>异步寻宝游戏</title>
+  <style>
+    /* 设置页面背景图 */
+    body,
+    html {
+      height: 100%;
+      /* 使body和html的高度为100% */
+      margin: 0;
+      /* 移除默认边距 */
+    }
+
+    body {
+      background-image: url('image/背景.jpg');
+      /* 替换为你的背景图片文件名 */
+      background-size: cover;
+      /* 覆盖整个页面 */
+      background-position: center;
+      /* 居中显示 */
+      /*background-repeat: no-repeat; /* 不重复 */
+      /*background-attachment: fixed; /* 背景图固定 */
+    }
+
+    /* 其他样式保持不变 */
+    #log {
+      margin-top: 20px;
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    /* 添加背景音乐样式 */
+    #bg-music {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    /* 新增玩家信息样式 */
+    #playerInfo {
+      margin-top: 20px;
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>异步寻宝游戏</h1>
+  <button onclick="findTreasureWithPromises()">开始寻宝</button>
+
+  <!-- 新增玩家信息显示区域 -->
+  <div id="playerInfo">
+    <p>玩家ID: <span id="playerId"></span></p>
+    <p>昵称: <span id="playerNickname"></span></p>
+  </div>
+
+  <div id="clueBox" style="margin-top: 20px; border: 1px solid black; padding: 10px;"></div>
+  <img id="clueImage" src="" alt="Clue Image" style="max-width: 300px; margin-top: 10px;"/>
+
+  <div id="decodeBox" style="margin-top: 20px; border: 1px solid black; padding: 10px;"></div>
+  <img id="decodeImage" src="" alt="Decode Image" style="max-width: 300px; margin-top: 10px;"/>
+
+  <div id="templeBox" style="margin-top: 20px; border: 1px solid black; padding: 10px;"></div>
+  <img id="templeImage" src="" alt="Temple Image" style="max-width: 300px; margin-top: 10px;"/>
+
+  <div id="treasureBox" style="margin-top: 20px; border: 1px solid black; padding: 10px;"></div>
+  <img id="treasureImage" src="" alt="Treasure Image" style="max-width: 300px; margin-top: 10px;"/>
+
+  <!-- 添加背景音乐 -->
+  <audio id="bg-music" controls autoplay loop>
+    <source src="backgroundmusic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- 新增文件输入元素 -->
+  <input type="file" id="fileInput" style="margin-top: 20px;"/>
+  
+  <div id="elementInfo"></div>
+
+  <div id="history"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
